@@ -116,3 +116,109 @@ hr {
     margin-top: -40px;
     background-color: #111; /* Modern Browsers */
 }
+
+
+
+
+
+
+
+
+@media screen and (max-width: 500px){
+  .col{
+    background-color: #1abc9c;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 2px; 
+    font-size: 20px;
+}
+#restart{
+    margin-top: 3%;
+    padding: 10px;
+    width: 75px;
+    font-size: 10px;
+    border: 1px solid black;
+}
+button:hover{
+    background-color: black;
+    color: grey;
+}
+#footer {
+  font-family: 'Josefin Sans', sans-serif;
+  position: relative;
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 20px;
+  width: 100%;
+  height: 20px;
+}
+
+input[type=text]{
+    width: 30%;
+    padding: 6px 10px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 20%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 7px 10px;
+    margin: 4px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+#submit{
+    width: 20%;
+    height: 20px;
+    background-color: dimgrey;
+    color: black;
+    font-size: 50%;
+    border: 1px black solid;
+}
+a,
+a:hover,
+a:active,
+a:visited {
+    font-size: 25px;
+  color: #922031;
+  text-decoration: none !important;
+  outline: none !important;
+}
+h1{
+    font-size: 200%;
+    font-family: 'Sedgwick Ave Display', cursive;
+}
+h2{
+    font-size: 125%;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 5px;
+}
+h3{
+    font-size: 200%;
+    margin-top: 5px;
+    margin-bottom: 1%;
+    cursor: pointer;
+    font-family: 'Dancing Script', cursive;
+}
+
+hr {
+    width: 70%;
+    border: none;
+    height: 2px;
+    color: #000; 
+    margin-top: -20px;
+    background-color: #111; /* Modern Browsers */
+}
+}
