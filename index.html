@@ -11,17 +11,30 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="java.js"></script>
     </head>
-    
+     
     <body>
          <h1>Tic Tac Toe Game </h1><hr />
          <h2>Free Code Camp Project</h2>
-        <div id="register">
+         <div id="choose">
+           <h2>
+            <button id="Player1">One Player</button><br /><br />
+            <button id="Player2">Two Player</button>
+            </h2>
+        </div>
+        <div id="onePlayer">
+            <h2>
+            Enter Your Name : 
+            <input type="text" name="player1" id="play01" placeholder="Your name.."><br />
+            <button id="submit1">Submit</button>
+            </h2>
+        </div>
+        <div id="twoPlayer">
             <h2>
             Enter Player 1 name : 
             <input type="text" name="player1" id="play1" placeholder="Your name.."><br />
             Enter Player 2 name : 
             <input type="text" name="player2" id="play2" placeholder="Your name.."><br />
-            <button id="submit">Submit</button>
+            <button id="submit2">Submit</button>
             </h2>
         </div>
           <h3 id="result"> Click Me to Start ..... </h3>
@@ -46,6 +59,7 @@
         </div>
         <div>
             <button id="restart">RESTART</button>
+            <button id="reset">RESET</button>
         </div>
         
         <footer id="footer">
