@@ -31,50 +31,53 @@ $(document).ready(function () {
     });
 
     $('.col').click(function () {
-        box[$(this).data('i')] = PLAYER;
+        if(box[$(this).data("i")] === " "){
+            box[$(this).data('i')] = PLAYER;
+            console.log($(this).data("i"));
 
-        if(flag === 1 && PLAYER !== " "){
-            var spots = availableSpots(box);
-            $(this).html(PLAYER);
-            gameOver("A");
-            if(spots.length === 0 && PLAYER !== " "){
-                PLAYER = " ";
-                $("#result").html("The Game is a Tie");
-            }
-            if(PLAYER !== " "){
-                var n = spots[Math.floor(Math.random()*spots.length)];
-                box[n] = "O";
-                $('.col[data-i=' + n + ']').html("O");
-                gameOver("B");
-            }
-        }
-        else{
-            if (isGameOver() === true && PLAYER !== " ") {
+            if(flag === 1 && PLAYER !== " "){
+                var spots = availableSpots(box);
                 $(this).html(PLAYER);
-                if (PLAYER === "X")
-                    $("#result").html("Winner is " + PLAY1);
-                else
-                    $("#result").html("Winner is " + PLAY2);
-                PLAYER = " ";
-            } else if (PLAYER !== " ") {
-                if (PLAYER === "O")
-                    $("#result").html("Your Turn ... " + PLAY1);
-                else
-                    $("#result").html("Your Turn ... " + PLAY2);
-                if (box.indexOf(" ") === -1) {
-                    $(this).html(PLAYER);
+                gameOver("A");
+                if(spots.length === 0 && PLAYER !== " "){
                     PLAYER = " ";
                     $("#result").html("The Game is a Tie");
-                } else {
+                }
+                if(PLAYER !== " "){
+                    var n = spots[Math.floor(Math.random()*spots.length)];
+                    box[n] = "O";
+                    $('.col[data-i=' + n + ']').html("O");
+                    gameOver("B");
+                }
+            }
+            else{
+                if (isGameOver() === true && PLAYER !== " ") {
+                    $(this).html(PLAYER);
+                    if (PLAYER === "X")
+                        $("#result").html("Winner is " + PLAY1);
+                    else
+                        $("#result").html("Winner is " + PLAY2);
+                    PLAYER = " ";
+                } else if (PLAYER !== " ") {
                     if (PLAYER === "O")
                         $("#result").html("Your Turn ... " + PLAY1);
                     else
                         $("#result").html("Your Turn ... " + PLAY2);
-                    $(this).html(PLAYER);
-                    if (PLAYER === "X")
-                        PLAYER = "O";
-                    else
-                        PLAYER = "X";
+                    if (box.indexOf(" ") === -1) {
+                        $(this).html(PLAYER);
+                        PLAYER = " ";
+                        $("#result").html("The Game is a Tie");
+                    } else {
+                        if (PLAYER === "O")
+                            $("#result").html("Your Turn ... " + PLAY1);
+                        else
+                            $("#result").html("Your Turn ... " + PLAY2);
+                        $(this).html(PLAYER);
+                        if (PLAYER === "X")
+                            PLAYER = "O";
+                        else
+                            PLAYER = "X";
+                    }
                 }
             }
         }
@@ -117,6 +120,12 @@ $(document).ready(function () {
     });
 
     $('#restart').click(function () {
+        //        if(flag === 1){
+        //            if(PLAYER === "X")
+        //                PLAYER = "Y";
+        //            else
+        //                PLAYER = "X";
+        //        }
         for (var i = 0; i < 9; i++) {
             box[i] = " ";
             $('.col[data-i=' + i + ']').html(' ');
